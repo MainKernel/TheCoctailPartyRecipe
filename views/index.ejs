@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/main.css">
+  <title>Coctail recipe</title>
+</head>
+
+<body>
+  <nav>
+    <div>
+      <a href="/">New Recipe</a>
+    </div>
+  </nav>
+  <main>
+    <div class="card">
+      <h1><%=locals.data.strDrink%></h1>
+      <img src="<%= locals.data.strDrinkThumb %>" alt="<%=locals.data.strDrink%> <%=locals.data.strCategory%> image">
+      <section class="glass">
+        <h2>Glass:</h2>
+        <p><%=locals.data.strGlass%></p>
+      </section>
+      <section class="instructions">
+        <h2>Instructions:</h2>
+        <p><%=locals.data.strInstructions%></p>
+      </section>
+      <section class="ingridients">
+        <h2>Ingridients:</h2>
+        <ul>
+          <% locals.ingridients.forEach((value, key, map) => { %>
+          <p><%=key%> <%=value%></p>
+          <%});%>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>
